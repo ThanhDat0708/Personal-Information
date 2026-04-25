@@ -69,7 +69,7 @@
                 <input type="email" name="email" required><br>
 
                 <label for="phone">Điện Thoại:</label>
-                <input type="tel" name="sdt" required maxlength="10"><br>
+                <input type="tel" name="phone" required maxlength="10"><br>
 
                 <label for="mes">Ghi Chú:</label>
                 <textarea name="message" id="content"></textarea><br>
@@ -80,21 +80,25 @@
     </div>
     <!-- xử lý gửi nhận thông báo khi có người liên hệ công việc -->
         <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="config.js"></script>
         <script>
             (function()
             {
-                emailjs.init("QtSbUC3S3ngUryQMf");
+                // lấy mã key kết nối nối web tới emailjs
+                // init = viết tắt của initialize hàm (khởi tạo) thiết lập ban đầu
+                // nếu không có hàm init thì tk sendform sẽ không nhận được reqeuest từ mình được
+                emailjs.init(CONFIG.PUBLIC_KEY);
 
             })();
 
-
+// bắt submit form để nhận request
             document.querySelector(".contact-form").addEventListener("submit", function(e){
                 
                 e.preventDefault();
-
+// gửi mail và xử lý
                 emailjs.sendForm(
-                    "service_o5l5497",
-                    "template_7ztg4df",
+                    CONFIG.SERVICE_ID,
+                    CONFIG.TEMPLATE_ID,
                     this
                 )
                 .then(() =>{
