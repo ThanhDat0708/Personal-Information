@@ -13,8 +13,8 @@
                 <a href="#home">Home</a>
                 <a href="#information">About</a>
                 <a href="#skills">Skills</a>
-                <a href="">PROJECT</a>
-                <a href="">Contact</a>
+                <a href="#projects">PROJECT</a>
+                <a href="#contact">Contact</a>
             </nav>
         </header>
         <!-- Home -->
@@ -79,8 +79,33 @@
         </section>
     </div>
     <!-- xử lý gửi nhận thông báo khi có người liên hệ công việc -->
-    <script>
-        
-    </script>
+        <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script>
+            (function()
+            {
+                emailjs.init("QtSbUC3S3ngUryQMf");
+
+            })();
+
+
+            document.querySelector(".contact-form").addEventListener("submit", function(e){
+                
+                e.preventDefault();
+
+                emailjs.sendForm(
+                    "service_o5l5497",
+                    "template_7ztg4df",
+                    this
+                )
+                .then(() =>{
+                    alert("Gửi Thành Công !");
+            })
+            .catch(err =>
+            {
+                console.log(err);
+                alert("Đã xảy ra lỗi khi gửi !");
+            });
+        });
+        </script>
 </body>
 </html>
