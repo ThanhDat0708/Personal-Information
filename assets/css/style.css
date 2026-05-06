@@ -29,17 +29,27 @@ header
 }
 section h1 {
     font-weight: bold;
-    font-size: 5rem;
-}
-.profile-home h1
-{
+    font-size: 3rem;
+    text-wrap: nowrap;
     overflow: hidden;
-    width: 0;
-    animation: typing 2s steps(30) forwards, infinite alternate-reverse;
+    width: 100%;
+    animation: typing 2s steps(15) infinite alternate-reverse,  blink 0.7s infinite;
 }
 @keyframes typing
 {
     from{
-        width: 0ch;
+        width: 0;
+    }
+    to {
+         width: 100%;
+    }
+  
+    
+
+}
+@keyframes blink
+{ 
+    50%{
+        border-color: transparent;
     }
 }
