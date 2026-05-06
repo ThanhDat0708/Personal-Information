@@ -16,17 +16,15 @@ body{
     text-decoration: none;
 }
 .navbar nav{
-    padding:40px ;
+    padding:20px 10px;
     display: flex;
     justify-self: flex-end;
     gap: 80px;
-    margin: auto;
-  
+    margin: 15px auto;
+    border: 1px solid rgba(255, 255, 200, 0.7);
+    border-radius: 20px;
 }
-header
-{
-      background:rgba(176, 174, 174, 0.01);
-}
+
 section h1 {
     font-weight: bold;
     font-size: 3rem;
@@ -44,7 +42,7 @@ section h1 {
          width: 100%;
     }
   
-    
+
 
 }
 @keyframes blink
