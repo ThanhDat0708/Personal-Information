@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio - Lê Thành Đạt | Web Developer">
+    <title>Lê Thành Đạt — Portfolio</title>
+</head>
+<body>
+    <div class="profile">
+        <!-- MENU -->
+        <header class="navbar">
+            <div class="container nav-inner">
+                <div class="brand hover-text">Thành <span>Đạt</span></div>
+                <button class="nav-toggle" aria-label="menu">☰</button>
+                <nav class="nav-links">
+                    <a class="hover-text" href="#home">Home</a>
+                    <a class="hover-text" href="#information">About</a>
+                    <a class="hover-text" href="#skills">Skills</a>
+                    <a class="hover-text" href="#projects">Projects</a>
+                    <a class="hover-text nav-contact-trigger" href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Home -->
+        <section class="profile-home" id="home">
+            <div class="container hero">
+                <div class="hero-left">
+                    <h1 class="hover-text">Hi, I'm <span class="accent">Lê Thành Đạt</span></h1>
+                    <p class="lead"><span id="typed"></span><span class="cursor" aria-hidden="true">|</span></p>
+                    <!-- CTA removed as requested -->
+                    <div class="social">
+                        <a class="hover-text" href="https://github.com/ThanhDat0708" target="_blank" rel="noopener">GitHub</a>
+                        <a class="hover-text" href="" target="_blank" rel="noopener">Facebook</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="avatar interactive interactive-sheen" tabindex="0">
+                            <div class="avatar-inner">
+                                <img src="assets/img/avt.jpg" alt="thành đạt">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <section class="profile-information" id="information">
+            <div class="container">
+                <h2 class="hover-text">Personal Information</h2>
+                <div class="info-grid">
+                    <div class="card interactive interactive-sheen">
+                        <ul>
+                            <li><strong>Name:</strong> Lê Thành Đạt</li>
+                            <li><strong>Birthday:</strong> 08/07/2005</li>
+                            <li><strong>Phone:</strong> 0395353172</li>
+                            <li><strong>Email:</strong> lethannhdat07@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="card interactive interactive-sheen">
+                        <ul>
+                            <li><strong>Address:</strong> Cần Thơ, Việt Nam</li>
+                            <li><strong>Education:</strong> Đại Học Nam Cần Thơ</li>
+                            <li><strong>Major:</strong> Công Nghệ Thông Tin</li>
+                            <li><strong>Hobbies:</strong> Học hỏi, tìm kiếm, nghiên cứu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- skills -->
+        <section class="profile-skills" id="skills">
+            <div class="container">
+                <h2 class="hover-text">Skills</h2>
+                <div class="skills-list">
+                    <div class="skill interactive interactive-sheen">Frontend: HTML, CSS</div>
+                    <div class="skill interactive interactive-sheen">Backend: PHP, C#</div>
+                    <div class="skill interactive interactive-sheen">Learning: JavaScript, Java, React</div>
+                    <div class="skill interactive interactive-sheen">Tools: Git, GitHub, VSCode</div>
+                </div>
+            </div>
+        </section>
+        <!-- projects -->
+        <section class="profile-projects" id="projects">
+            <div class="container">
+                <h2 class="hover-text">Projects</h2>
+                <div class="projects-grid">
+                    <a class="project-card interactive interactive-sheen" href="https://github.com/ThanhDat0708/QuanLyKhachSan" target="_blank" rel="noopener">
+                        <h3>Quản Lý Khách Sạn</h3>
+                        <p>Ứng dụng quản lý khách sạn - PHP, MySQL</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="contact-modal" id="contact-modal" aria-hidden="true">
+            <div class="contact-modal__backdrop" data-contact-close></div>
+            <div class="contact-modal__panel interactive interactive-sheen" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+                <button class="contact-modal__close" type="button" data-contact-close aria-label="Close contact popup">×</button>
+                <h2 class="hover-text" id="contact-title">Contact</h2>
+                <p class="contact-modal__hint">Liên hệ công việc</p>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <label for="name">Tên</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Điện Thoại</label>
+                        <input type="tel" name="phone" required maxlength="10">
+                    </div>
+                    <div class="form-row">
+                        <label for="mes">Ghi Chú</label>
+                        <textarea name="message" id="content" rows="5"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <button class="btn primary" type="submit">Gửi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- xử lý gửi nhận thông báo khi có người liên hệ công việc -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="assets/js/config.js"></script>
+        <script>
+            // simple nav toggle for small screens
+            document.addEventListener('DOMContentLoaded', function(){
+                var btn = document.querySelector('.nav-toggle');
+                var links = document.querySelector('.nav-links');
+                if(btn && links){
+                    btn.addEventListener('click', function(){
+                        links.classList.toggle('open');
+                    });
+                }
+            });
+            // contact popup modal
+            (function(){
+                var modal = document.getElementById('contact-modal');
+                var openers = document.querySelectorAll('.nav-contact-trigger');
+                var closers = document.querySelectorAll('[data-contact-close]');
+                if(!modal || !openers.length) return;
+
+                function openModal(e){
+                    if(e) e.preventDefault();
+                    modal.classList.add('is-open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('modal-open');
+                    var firstInput = modal.querySelector('input, textarea, button');
+                    if(firstInput) firstInput.focus();
+                }
+
+                function closeModal(){
+                    modal.classList.remove('is-open');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('modal-open');
+                }
+
+                openers.forEach(function(opener){ opener.addEventListener('click', openModal); });
+                closers.forEach(function(closer){ closer.addEventListener('click', closeModal); });
+                document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+            })();
+            // avatar tilt + edit/upload
+            (function(){
+                var avatar = document.querySelector('.avatar');
+                if(!avatar) return;
+                var inner = avatar.querySelector('.avatar-inner');
+
+                function handleMove(e){
+                    var rect = avatar.getBoundingClientRect();
+                    var x = (e.clientX - rect.left) - rect.width/2;
+                    var y = (e.clientY - rect.top) - rect.height/2;
+                    var rx = (-y/rect.height) * 18; // rotateX
+                    var ry = (x/rect.width) * 18; // rotateY
+                    inner.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) translateZ(16px) scale(1.02)';
+                }
+                function reset(){ inner.style.transform = ''; }
+
+                avatar.addEventListener('mousemove', handleMove);
+                avatar.addEventListener('mouseleave', reset);
+                avatar.addEventListener('touchstart', function(){}, {passive:true});
+            })();
+
+            // typing text loop
+            (function(){
+                var phrases = [
+                    'Passionate Web Developer',
+                    'Building clean, modern interfaces',
+                    'Frontend & UI enthusiast'
+                ];
+                var el = document.getElementById('typed');
+                var cursor = document.querySelector('.cursor');
+                if(!el) return;
+
+                var idx = 0, char = 0, forward = true;
+
+                function tick(){
+                    var current = phrases[idx];
+                    if(forward){
+                        el.textContent = current.slice(0, ++char);
+                        if(char === current.length){ forward = false; setTimeout(tick, 900); return; }
+                    } else {
+                        el.textContent = current.slice(0, --char);
+                        if(char === 0){ forward = true; idx = (idx+1)%phrases.length; setTimeout(tick, 300); return; }
+                    }
+                    setTimeout(tick, forward ? 80 : 40);
+                }
+                tick();
+            })();
+
+            // cursor-follow sheen for elements with `.interactive-sheen`
+            (function(){
+                var els = document.querySelectorAll('.interactive-sheen');
+                if(!els || els.length === 0) return;
+                els.forEach(function(el){
+                    // initialize CSS vars
+                    el.style.setProperty('--sx','50%');
+                    el.style.setProperty('--sy','50%');
+                    el.addEventListener('mousemove', function(e){
+                        var r = el.getBoundingClientRect();
+                        var x = ((e.clientX - r.left) / r.width) * 100;
+                        var y = ((e.clientY - r.top) / r.height) * 100;
+                        el.style.setProperty('--sx', x.toFixed(2) + '%');
+                        el.style.setProperty('--sy', y.toFixed(2) + '%');
+                    });
+                    el.addEventListener('mouseleave', function(){
+                        el.style.setProperty('--sx','50%');
+                        el.style.setProperty('--sy','50%');
+                    });
+                });
+            })();
+        </script>
+</body>
+</html>
